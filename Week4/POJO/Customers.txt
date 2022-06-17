@@ -1,0 +1,60 @@
+public class Customers {
+    private Long CustomersID;
+    private String CustomerName;
+    private String Adress;
+    private String Email;
+    private String Tel;
+
+    public Customers() {
+    }
+
+    public Customers(Long CustomersID, String customerName, String adress, String email, String tel) {
+        this.CustomerID = customerId;
+        this.CustomerName = customerName;
+        this.Adress = adress;
+        this.Email = email;
+        this.Tel = tel;
+    }
+
+    public long getCustomerID() {
+        return CustomerID;
+    }
+
+    public void setCustomerId(long customerID) {
+        CustomerID = customerID;
+    }
+
+    public String getCustomerName() {
+        return CustomerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        CustomerName = customerName;
+    }
+
+  
+    public String getAdress() {
+        return Adress;
+    }
+
+    public void setAdress(String adress) {
+        Adress = adress;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getTel() {
+        return Tel;
+    }
+
+    public void setTel(String tel) {
+        Tel = tel;
+    }
+
+}

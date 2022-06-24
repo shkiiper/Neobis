@@ -1,0 +1,13 @@
+1. Create database AvtoMarket
+
+2. Create Maven project on IntelijIDEA
+
+3. Add dependencies in pom.xml
+
+4. Create JDBC class with main method
+
+5. Connecting with Database
+
+6. Add methods for add, update, delete and select from Database
+
+7. Test/Run

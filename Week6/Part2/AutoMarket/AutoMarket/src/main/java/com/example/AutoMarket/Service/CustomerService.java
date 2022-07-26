@@ -30,7 +30,7 @@ public class CustomerService {
             return new ResponseEntity<String>("customer created!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("customer has not been created!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("customer has not been created!", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -39,7 +39,7 @@ public class CustomerService {
             return new ResponseEntity<Optional<Customer>>(customerRepository.findById(id), HttpStatus.OK);
         }
         else {
-            return new ResponseEntity<String>("customer with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("customer with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -61,7 +61,7 @@ public class CustomerService {
             return new ResponseEntity<String>("customer deleted!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("customer with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("customer with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
 
     }

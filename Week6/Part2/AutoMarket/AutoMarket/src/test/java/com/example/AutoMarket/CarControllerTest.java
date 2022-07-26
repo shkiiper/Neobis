@@ -52,7 +52,7 @@ public class CarControllerTest {
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
         ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
         String requestJson=ow.writeValueAsString(car);
-        mockMvc.perform(post("/cars").contentType(APPLICATION_JSON_UTF8)
+        mockMvc.perform(post("/cars/add").contentType(APPLICATION_JSON_UTF8)
                         .content(requestJson))
                 .andExpect(status().isOk());
     }
@@ -83,3 +83,4 @@ public class CarControllerTest {
     }
 
 }
+

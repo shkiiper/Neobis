@@ -15,12 +15,12 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Car> findAll(){
         return carService.getAllCar();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<String> add(@RequestBody Car car){
         return carService.addCar(car);
     }

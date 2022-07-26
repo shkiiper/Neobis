@@ -30,7 +30,7 @@ public class OrderService {
             return new ResponseEntity<String>("order created!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("order has not been created!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("order has not been created!", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -61,7 +61,7 @@ public class OrderService {
             return new ResponseEntity<String>("order deleted!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("order with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("order with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
     }
 }

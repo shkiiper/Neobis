@@ -12,6 +12,8 @@ create table cars
         constraint fk1itgarrpxn99j57gfqhlotuel
             references price_list
 );
+
+
 create table cars_seq
 (
     next_val bigint null

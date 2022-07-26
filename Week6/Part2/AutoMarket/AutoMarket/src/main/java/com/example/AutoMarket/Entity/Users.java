@@ -18,8 +18,8 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table (name = "User")
-public class User implements UserDetails {
+@Table (name = "Users")
+public class Users implements UserDetails {
     @Id
     @SequenceGenerator(name = "User_seq",
             sequenceName = "User_seq",
@@ -41,7 +41,7 @@ public class User implements UserDetails {
     @Column (name = "roles")
     private Set<Role> roles = new HashSet<>();
 
-    public User(String userName,String password) {
+    public Users(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }

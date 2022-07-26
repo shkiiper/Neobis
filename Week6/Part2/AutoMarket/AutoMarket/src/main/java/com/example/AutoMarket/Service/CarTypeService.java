@@ -30,7 +30,7 @@ public class CarTypeService {
             return new ResponseEntity<String>("carType created!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("carType has not been created!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("carType has not been created!", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -39,11 +39,11 @@ public class CarTypeService {
             return new ResponseEntity<Optional<CarType>>(carTypeRepository.findById(id), HttpStatus.OK);
         }
         else {
-            return new ResponseEntity<String>("carType with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("carType with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
     }
 
-    public ResponseEntity<?> updateCarType(Long id, CarType newCarType){
+    public ResponseEntity<String> updateCarType(Long id, CarType newCarType){
         return carTypeRepository.findById(id)
                 .map(carType -> {
                     carType.setCarType(newCarType.getCarType());
@@ -58,7 +58,7 @@ public class CarTypeService {
             return new ResponseEntity<String>("carType deleted!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("carType with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("carType with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
     }
 }

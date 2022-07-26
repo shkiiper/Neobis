@@ -30,7 +30,7 @@ public class PriceListService {
             return new ResponseEntity<String>("priceList created!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("priceList has not been created!", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("priceList has not been created!", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -39,7 +39,7 @@ public class PriceListService {
             return new ResponseEntity<Optional<PriceList>>(priceListRepository.findById(id), HttpStatus.OK);
         }
         else {
-            return new ResponseEntity<String>("carType with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("carType with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
     }
 
@@ -58,7 +58,7 @@ public class PriceListService {
             return new ResponseEntity<String>("priceList deleted!", HttpStatus.OK);
         }
         catch (Exception e){
-            return new ResponseEntity<String>("priceList with id "+id+" not found", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<String>("priceList with id "+id+" not found", HttpStatus.NOT_FOUND);
         }
     }
 }

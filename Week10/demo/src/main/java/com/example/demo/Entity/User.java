@@ -1,9 +1,6 @@
-package com.example.AutoMarket.Entity;
+package com.example.demo.Entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -19,7 +16,7 @@ import java.util.Set;
 @Setter
 @Entity
 @Table (name = "Users")
-public class Users implements UserDetails {
+public class User implements UserDetails {
     @Id
     @Column (name = "user_ID")
     private Long id;
@@ -37,7 +34,7 @@ public class Users implements UserDetails {
     @Column (name = "roles")
     private Set<Role> roles = new HashSet<>();
 
-    public Users(String userName, String password) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
